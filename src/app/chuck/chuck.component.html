@@ -1,0 +1,17 @@
+<div class="hero">
+  <div class="random">
+    <h1 *ngFor="let joke of jokes" ><img src="{{joke?.icon_url}}" alt="">{{joke?.value}}</h1>
+  </div>
+  <div class="input-container">
+    <h1>Generate Your Chuck Joke!</h1>
+      <mat-form-field>
+      <input matInput name="generateJoke" placeholder="Input" (input)="onSearchChange($event.target.value)">
+       </mat-form-field>
+       <mat-form-field>
+      <mat-select placeholder="Select" (change)="onChange($event.value)">
+        <mat-option value="option">Select Category</mat-option>
+        <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+      </mat-select>
+       </mat-form-field>
+  </div>
+</div>
