@@ -33,7 +33,7 @@ export class ChuckComponent implements OnInit {
   onSearchChange(searchValue){
 if (searchValue.length > 3) {
   this.http.get('https://api.chucknorris.io/jokes/search?query='+searchValue).subscribe(result => {
-    this.jokes = result.result;
+    this.jokes = result["result"];
     console.log(result);
   });
 }
